@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3109157935481066373}
   - component: {fileID: 2382023946356335055}
   - component: {fileID: 4407732729542372990}
+  - component: {fileID: 7116720561454299816}
   m_Layer: 6
   m_Name: MovingPlatforms
   m_TagString: Untagged
@@ -57,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,6 +229,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bef80b8ec39aa4ab334ad768b4e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7116720561454299816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842619351527767203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 716e33470000000025bf748a
+  m_ShapePath:
+  - {x: -0.92925644, y: -0.17532563, z: 0}
+  - {x: -0.92925453, y: 0.0927906, z: 0}
+  - {x: 0.952837, y: 0.08493018, z: 0}
+  - {x: 0.952837, y: -0.1713953, z: 0}
+  m_ShapePathHash: -285724107
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -909776
+  m_LocalBounds:
+    m_Center: {x: 0.011790276, y: -0.041267514, z: 0}
+    m_Extent: {x: 0.9410467, y: 0.13405812, z: 0}
 --- !u!1 &7337762935625641882
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +322,7 @@ Transform:
   - {fileID: 1002671445503079075}
   - {fileID: 8787644181749020137}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7948811330137395090
 GameObject:

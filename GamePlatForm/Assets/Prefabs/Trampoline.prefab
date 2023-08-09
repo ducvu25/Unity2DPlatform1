@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 9220259695042227441}
   - component: {fileID: 4334194858988608597}
   - component: {fileID: 8351903000180431125}
+  - component: {fileID: 6755488445964970423}
   m_Layer: 0
   m_Name: Trampoline
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 109222073462664783}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1282535307666577286
 SpriteRenderer:
@@ -87,7 +88,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -198,3 +199,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpFoce: 20
+--- !u!114 &6755488445964970423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442064861633011652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 716e33470000000025bf748a
+  m_ShapePath:
+  - {x: -0.68183136, y: -0.47452557, z: 0}
+  - {x: -0.68183136, y: -0.25103998, z: 0}
+  - {x: 0.6394272, y: -0.25103998, z: 0}
+  - {x: 0.6394272, y: -0.46510267, z: 0}
+  m_ShapePathHash: 609858853
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -969944
+  m_LocalBounds:
+    m_Center: {x: -0.021202087, y: -0.36278278, z: 0}
+    m_Extent: {x: 0.6606293, y: 0.111742795, z: 0}

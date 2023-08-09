@@ -22,7 +22,7 @@ public class TrampolineController : MonoBehaviour
             if (gameObject.transform.GetChild(0).transform.position.y < collision.gameObject.transform.position.y)
             {
                 collision.gameObject.transform.SetParent(transform);
-                collision.gameObject.GetComponent<PlayerController>().AddFoce(jumpFoce);
+                collision.gameObject.GetComponent<PlayerController>().AddFoce(Vector2.up*jumpFoce);
                 animator.SetTrigger("Jump");
                 controller.PlaySound((int)SoundEffect.trampoline);
             }

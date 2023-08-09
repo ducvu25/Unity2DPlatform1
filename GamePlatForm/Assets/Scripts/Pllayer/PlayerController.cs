@@ -20,9 +20,10 @@ public class PlayerController : MonoBehaviour
     float speedMultiplier;
     bool doubleJump = true;
     float move_x;
-
+    bool touchGround;
     private void Awake()
     {
+        touchGround = false;
         rb = GetComponent<Rigidbody2D>();
         sp = GetComponent<SpriteRenderer>();    
         ani = GetComponent<Animator>();
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            if (IsGround())
+            if (IsGround() || touchGround)
             {
                 doubleJump = true;
                 rb.velocity = new Vector2(rb.velocity.x, forceJump);
@@ -104,7 +105,9 @@ public class PlayerController : MonoBehaviour
     }
     bool IsGround()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, 0.1f, jumpableGround);
+        if (!touchGround && Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0, Vector2.down, 0.1f, jumpableGround))
+            touchGround = true;
+        return touchGround;
     }
     public void UpdateAnimationTrigger(int value)
     {
@@ -123,9 +126,14 @@ public class PlayerController : MonoBehaviour
                 }
         }
     }
-    public void AddFoce(float value)
+    public void AddFoce(Vector2 value)
     {
-        rb.velocity = new Vector2(rb.velocity.x, value);
-        doubleJump = true;
+        rb.velocity = value; // new Vector2(rb.velocity.x, value);
+        if(value.y > 0 && !doubleJump)
+            doubleJump = true;
+    }
+    public void SetTouchGround(bool value)
+    {
+        touchGround = value;
     }
 }

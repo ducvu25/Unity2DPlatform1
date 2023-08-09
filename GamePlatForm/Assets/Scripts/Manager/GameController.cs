@@ -13,8 +13,8 @@ public class GameController : MonoBehaviour
     {
         nCherry = 0;
         txtCherryNumber.text = "Cherry: " + nCherry.ToString();
-        startPoint = GameObject.FindWithTag("StartPoint").transform.position;
         player = GameObject.FindWithTag("Player");
+        startPoint = GameObject.FindWithTag("StartPoint").transform.position;
         player.transform.position = startPoint;
         //startPoint = player.transform.position;
         GameObject.FindWithTag("MainCamera").transform.position = new Vector3(startPoint.x, startPoint.y, GameObject.FindWithTag("MainCamera").transform.position.z);

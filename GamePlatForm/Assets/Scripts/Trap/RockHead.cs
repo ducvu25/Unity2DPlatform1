@@ -37,12 +37,13 @@ public class RockHead : MonoBehaviour
     {
         if (IsGround() && !touchGround)
         {
-            audioController.PlaySound((int)SoundEffect.boxJump);
+            //if(player.gameObject.transform.position.x )
             currNext = (currNext + 1) % Points.Length;
             touchGround = true;
             animator.SetTrigger("Jump");
             if (crush_the_player)
             {
+                audioController.PlaySound((int)SoundEffect.boxJump);
                 PlayerInformation playerInformation = player.GetComponent<PlayerInformation>();
                 playerInformation.AddDame(dame);
                 crush_the_player = false;

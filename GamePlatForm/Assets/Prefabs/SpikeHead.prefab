@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8631108525084464699}
   - component: {fileID: 9185551862989411767}
   - component: {fileID: 7019983099586962686}
+  - component: {fileID: 832846238982559}
   m_Layer: 0
   m_Name: SpikeHead
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6040091536580734934
 SpriteRenderer:
@@ -56,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,3 +197,33 @@ MonoBehaviour:
   distance: 6
   gravity: 5
   dame: 1
+--- !u!114 &832846238982559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5891295342080371503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 716e33470000000025bf748a
+  m_ShapePath:
+  - {x: -0.80651855, y: -0.88639736, z: 0}
+  - {x: -0.8154144, y: 0.84190273, z: 0}
+  - {x: 0.8866043, y: 0.82410526, z: 0}
+  - {x: 0.87770844, y: -0.8952961, z: 0}
+  m_ShapePathHash: 1155067221
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -1023804
+  m_LocalBounds:
+    m_Center: {x: 0.03559494, y: -0.026696682, z: 0}
+    m_Extent: {x: 0.85100937, y: 0.8685994, z: 0}

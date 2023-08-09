@@ -6,10 +6,12 @@ public class ColliderItem : MonoBehaviour
 {
     GameController controller;
     PlayerInformation playerInformation;
+    PlayerController playerController;
     void Start()
     {
         controller = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         playerInformation = GetComponent<PlayerInformation>();
+        playerController = GetComponent<PlayerController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,5 +29,13 @@ public class ColliderItem : MonoBehaviour
             controller.SetStartPoint(collision.gameObject.transform.position);
             collision.enabled = false;
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+       playerController.SetTouchGround(true);
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        playerController.SetTouchGround(false);
     }
 }
