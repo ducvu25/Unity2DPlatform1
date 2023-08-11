@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     Animator ani;
     BoxCollider2D coll;
     AudioController audioController;
+    GhostController ghostController;
     enum MovementState { idle, running, jumping, falling, doubleJump}
 
     float speedMultiplier;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         sp = GetComponent<SpriteRenderer>();    
         ani = GetComponent<Animator>();
         coll = GetComponent<BoxCollider2D>();
+        ghostController = GetComponent<GhostController>();
         audioController = GameObject.FindWithTag("GameController").GetComponent<AudioController>();
         doubleJump = false;
         speedMultiplier = speed;
@@ -70,6 +72,7 @@ public class PlayerController : MonoBehaviour
     void UpdateAnimation()
     {
 
+        ghostController.check = false;
         MovementState state;// = MovementState.idle;
         if (move_x > 0)
         {
@@ -85,6 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             state = MovementState.idle;
         }
+
         if (rb.velocity.y > 0.1f)
         {
             if (doubleJump)
@@ -93,10 +97,12 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                ghostController.check = true;
                 state = MovementState.doubleJump;
             }
         }else if(rb.velocity.y < -0.1f)
         {
+            ghostController.check = true;
             state = MovementState.falling;
             if(rb.velocity.y > -30)
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 1.05f);//Mathf.Max(rb.velocity.y, ))

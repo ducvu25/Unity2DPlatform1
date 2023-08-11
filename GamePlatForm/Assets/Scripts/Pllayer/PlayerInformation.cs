@@ -44,6 +44,11 @@ public class PlayerInformation : MonoBehaviour
             gameController.BackToPosition();
         }
     }
+    public void Recuperate(int value = 1)
+    {
+        for (int i = 0; i < value && healthCount < healthList.Count; i++, healthCount++)
+            healthList[healthCount].SetActive(true);
+    }
     void NewGame()
     {
         loadMap.Restart();
