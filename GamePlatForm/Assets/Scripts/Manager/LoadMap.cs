@@ -18,6 +18,6 @@ public class LoadMap : MonoBehaviour
     }
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(1);
     }
 }

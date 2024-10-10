@@ -23,7 +23,7 @@ public class EndController : MonoBehaviour
             endGame = true;
             animator.SetTrigger("Finish");
             audioController.PlaySound((int)SoundEffect.finish);
-            loadMap.Restart(2f);
+            loadMap.LoadScene(1);
         }
     }
 }

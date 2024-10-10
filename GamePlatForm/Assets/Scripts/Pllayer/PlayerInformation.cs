@@ -11,6 +11,8 @@ public class PlayerInformation : MonoBehaviour
     PlayerController playerController;
     LoadMap loadMap;
     GameController gameController;
+    float timeDelayCheck = 0.5f;
+    float _timeDelayCheck = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,8 @@ public class PlayerInformation : MonoBehaviour
     }
     public void AddDame(int value)
     {
+        if (_timeDelayCheck > Time.time) return;
+        _timeDelayCheck = Time.time + timeDelayCheck;
         healthCount -= value;
         if (healthCount < 0)
             healthCount = 0;
