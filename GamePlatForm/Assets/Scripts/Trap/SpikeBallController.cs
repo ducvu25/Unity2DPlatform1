@@ -23,14 +23,14 @@ public class SpikeBallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rb.velocity.x == 0)
+        if(rb.linearVelocity.x == 0)
         {
             if (right)
                 rb.AddForce(Vector2.right * force);
             else
                 rb.AddForce(Vector2.left * force);
         }
-        if (rb.velocity.y == 0)
+        if (rb.linearVelocity.y == 0)
             right = !right;
         //Debug.Log(rb.velocity);
     }

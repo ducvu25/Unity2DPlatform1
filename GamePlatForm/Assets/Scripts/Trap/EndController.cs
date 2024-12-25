@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndController : MonoBehaviour
 {
@@ -20,10 +21,19 @@ public class EndController : MonoBehaviour
     {
         if(!endGame && collision.tag == "Player")
         {
-            endGame = true;
-            animator.SetTrigger("Finish");
-            audioController.PlaySound((int)SoundEffect.finish);
-            loadMap.LoadScene(1);
+            StartCoroutine(EndGame(collision.transform));
         }
+    }
+    IEnumerator EndGame(Transform player)
+    {
+        endGame = true;
+        animator.SetTrigger("Finish");
+        audioController.PlaySound((int)SoundEffect.finish);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Loadding.instance.OpenMap(currentSceneIndex - (int)INDEX_SCENE.SCENE_LV_1, 3);
+        player.GetComponent<PlayerController>().enabled = false;
+        yield return new WaitForSeconds(1.5f);
+        AudioController.instance.SetAudio();
+        loadMap.LoadScene(1);
     }
 }

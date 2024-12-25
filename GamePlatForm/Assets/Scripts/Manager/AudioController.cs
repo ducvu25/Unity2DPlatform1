@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum SoundEffect
+public enum SoundEffect
 {
     jump,
     death,
@@ -12,7 +12,8 @@ enum SoundEffect
     saw,
     boxJump,
     movingPlatform,
-    trampoline
+    trampoline,
+    button
 }
 public class AudioController : MonoBehaviour
 {
@@ -23,18 +24,22 @@ public class AudioController : MonoBehaviour
 
     bool stop;
 
-    private static AudioController instance;
+    public static AudioController instance;
     void Awake()
     {
         instance = this;
     }
-
+    public void SetAudio()
+    {
+        PlayerPrefs.SetFloat("Index_Sound_Bg", backgroundMusic.time);
+    }
     // Start is called before the first frame update
     void Start()
     {
         stop = PlayerPrefs.GetInt("Audio", 0) != 0 ? false : true;
         if (!stop)
         {
+            backgroundMusic.time = PlayerPrefs.GetFloat("Index_Sound_Bg", 0);
             backgroundMusic.Play();
         }
         audioSounds = new AudioSource[shortSounds.Count];
